@@ -22,14 +22,14 @@ def generate_branch_report():
     gl = gitlab.Gitlab(config['gitlab_url'], private_token=config['gitlab_token'])
 
     group = gl.groups.get(config["gitlab_group"])
-    group_merge_requests = group.mergerequests.list()
+    group_merge_requests = group.mergerequests.list(state='opened')
 
     for mr in group_merge_requests:
         message = "* %s `%s` -> `%s` : %s" % (mr.title, mr.source_branch, mr.target_branch, mr.web_url)
         if mr.work_in_progress:
             report["wipBranches"].append(message);
         else:
-            report["pendinReviewBranches"].append(message);
+            report["pendingReviewBranches"].append(message);
 
 
     for groupProject in group.projects.list():
