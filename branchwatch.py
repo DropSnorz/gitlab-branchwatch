@@ -70,11 +70,11 @@ def generate_branch_report():
 
 def send_report(report):
     
-    data = 'Pending Review \n'
+    data = ':rocket: **Pending Review** \n'
     data += '\n'.join(report['pendingReviewBranches'])
-    data += '\nWork in progress \n'
+    data += '\n:stopwatch: **Work in progress**\n'
     data += '\n'.join(report['wipBranches'])
-    data += '\nUntracked work \n'
+    data += '\n:black_flag: **Untracked work**\n'
     data += '\n'.join(report['untrackedBranches'])
     print(data)
 
