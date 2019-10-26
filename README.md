@@ -1,3 +1,3 @@
 # gitlab-branchwatch
 
-Submit branche and merge request reports from Gitlab group activity to Mattermost / Slack / Discord webhooks.
+Gitlab branches and merge requests reports to Mattermost / Slack / Discord channels. 
